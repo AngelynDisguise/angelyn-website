@@ -1,4 +1,7 @@
 import React from 'react';
+import { Document, Page } from 'react-pdf';
+
+import Resume from '../Angelyn_s_CV (edited 3-14-22).pdf';
 
 function Home() {
   return (
@@ -18,6 +21,9 @@ function Home() {
             </p>
         </div>
         <div className="resume">
+        <Document file={Resume}>
+            <Page pageNumber={1} />
+        </Document>
         </div> 
     </div>
   );
