@@ -1,0 +1,21 @@
+version: "3"
+
+#-----Application-----
+
+services:
+  frontend:
+    container_name: react
+    build: .
+    restart: always
+  
+  #-----Proxy-----
+
+  nginx:
+    container_name: nginx
+    image: nginx:alpine
+    restart: always
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx-dev.conf:/etc/nginx/conf.d/default.conf:ro
+
