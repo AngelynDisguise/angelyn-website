@@ -39,3 +39,8 @@
 .intro {
     align-content: center;
 }
+
+.pdf {
+    display: flex;
+    justify-content: center;
+}
