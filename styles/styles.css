@@ -1,13 +1,41 @@
 /*style.css*/
 
-div {
-    color: blue;
+/* body {
+    display: grid;
+} */
+
+.body-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+    padding-left: 50px;
+    max-width: 80%;
 }
 
-.alert-text {
-    color: red;
+.sub-body-wrapper {
+    border-color: black;
+    padding-left: 20px;
+    align-self: center;
 }
 
-.alert-text {
-    color: purple;
+.pfp {
+    width: 80%;
+    height: 80%;
+    padding: 20px;
+}
+
+.header {
+    padding-bottom: 5px;
+    align-content: center;
+}
+
+.my-name {
+    margin-bottom: 0px;
+}
+.my-caption {
+    margin-top: 10px;
+}
+
+.intro {
+    align-content: center;
 }
