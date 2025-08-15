@@ -1,36 +1,45 @@
-const GITHUB_USERNAME = 'angelyndisguise'
-const GITHUB_REPO = 'angelyn-website'
+/* Config constants */
+const GITHUB_REPO_CONFIG = {
+    username: 'angelyndisguise',
+    name: 'angelyn-website'
+} as const
+
+const ENV_CONFIG = {
+    isProduction: process.env.NODE_ENV === 'production',
+    devPort: 3000
+} as const
+
+const URL_CONFIG = {
+    dev: `http://localhost:${ENV_CONFIG.devPort}`,
+    prod: `https://${GITHUB_REPO_CONFIG.username}.github.io/${GITHUB_REPO_CONFIG.name}` // GitHub Pages
+} as const
 
 interface SiteConfig {
+    repo: typeof GITHUB_REPO_CONFIG
+    env: typeof ENV_CONFIG
+    urls: typeof URL_CONFIG
+    
     basePath: string
-    githubPagesHost: string
-    siteUrl: string
-    devUrl: string
     baseUrl: string
-    isProduction: boolean
     
     getAssetPath(path: string): string
 }
 
-// Sets proper path names if deployed to prod (i.e. GitHub Pages)
 export const siteConfig: SiteConfig = {
-    basePath: `/${GITHUB_REPO}`,
-    githubPagesHost: `${GITHUB_USERNAME}.github.io`,
-    siteUrl: `https://${GITHUB_USERNAME}.github.io/${GITHUB_REPO}`,
+    repo: GITHUB_REPO_CONFIG,
+    env: ENV_CONFIG,
+    urls: URL_CONFIG,
 
-    devUrl: 'http://localhost:3000',
-    
-    isProduction: process.env.NODE_ENV === 'production',
-    
-    get baseUrl() {
-        return this.isProduction ? this.siteUrl : this.devUrl
+    get basePath() {
+        return this.env.isProduction ? `/${this.repo.name}` : ''
     },
-    
+
+    get baseUrl() {
+        return this.env.isProduction ? this.urls.prod : this.urls.dev
+    },
+
+    // For loading runtime assets (e.g., images)
     getAssetPath(path: string) {
-        if (this.isProduction) {
-            return `${this.basePath}${path}`
-        }
-        return path
+        return this.env.isProduction ? `/${this.repo.name}${path}` : path
     }
 }
-
