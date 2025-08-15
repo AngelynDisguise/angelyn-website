@@ -1,13 +1,22 @@
+'use client'
 import Image from 'next/image'
+import { useState, useEffect } from 'react'
+import { siteConfig } from '@/lib/site-config'
 
 export default function Profile() {
+    const [imageSrc, setImageSrc] = useState('/angelyn.jpg')
+
+    useEffect(() => {
+        setImageSrc(siteConfig.getAssetPath('/angelyn.jpg'))
+    }, [])
     return (
         <div className="flex flex-col lg:flex-row gap-8 items-center justify-center p-12 lg:p-16">
+        
         {/* Profile Image */}
         <div className="flex-shrink-0">
             <div className="relative mx-auto lg:mx-0">
             <Image
-                src="/angelyn.jpg"
+                src={imageSrc}
                 alt="Profile"
                 width={320}
                 height={320}
