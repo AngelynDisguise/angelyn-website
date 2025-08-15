@@ -1,30 +1,7 @@
-'use client'
-import { useEffect } from 'react'
-import { siteConfig } from '@/lib/site-config'
+import localFont from "next/font/local"
 
-// Loads fonts correctly in prod (i.e. GitHub Pages)
-export default function FontLoader() {
-    useEffect(() => {
-        const fontPath = siteConfig.getAssetPath('/fonts/Monocraft.otf')
-        const existingStyle = document.getElementById('dynamic-monocraft-font')
-        if (existingStyle) {
-            existingStyle.remove()
-        }
-        
-        const style = document.createElement('style')
-        style.id = 'dynamic-monocraft-font'
-        style.innerHTML = `
-            @font-face {
-                font-family: 'Monocraft'
-                src: url('${fontPath}') format('opentype')
-                font-weight: normal
-                font-style: normal
-                font-display: swap
-            }
-        `
-        
-        document.head.appendChild(style)
-    }, [])
-
-    return null
-}
+export const monocraft = localFont({
+  src: '../../public/fonts/Monocraft.otf',  // has to be hard-coded since it's optimized at build time :(
+  variable: '--font-monocraft',
+  display: 'swap',
+})

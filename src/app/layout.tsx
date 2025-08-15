@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import "./globals.css"
-import FontLoader from "@/lib/fontLoader"
+import { monocraft } from "@/lib/fontLoader"
+
 
 export const metadata: Metadata = {
   title: "Angelyn Domingo",
@@ -14,10 +15,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
-        <FontLoader />
+      <body className={monocraft.variable}>
         {children}
       </body>
     </html>
-  );
+  )
 }
