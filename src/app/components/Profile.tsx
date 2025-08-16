@@ -1,22 +1,15 @@
-'use client'
 import Image from 'next/image'
-import { useState, useEffect } from 'react'
-import { siteConfig } from '@/lib/site-config'
+import profileImage from '../../../public/angelyn.jpg'
 
 export default function Profile() {
-    const [imageSrc, setImageSrc] = useState('/angelyn.jpg')
-
-    useEffect(() => {
-        setImageSrc(siteConfig.getAssetPath('/angelyn.jpg'))
-    }, [])
     return (
         <div className="flex flex-col lg:flex-row gap-8 items-center justify-center p-12 lg:p-16">
         
         {/* Profile Image */}
-        <div className="flex-shrink-0">
+        <div className="flex-shrink-0 fade-in fade-in-delay-5">
             <div className="relative mx-auto lg:mx-0">
             <Image
-                src={imageSrc}
+                src={profileImage}
                 alt="Profile"
                 width={320}
                 height={320}
@@ -29,28 +22,28 @@ export default function Profile() {
 
         {/* Profile Info */}
         <div className="flex-1 text-center lg:text-left p-6 lg:p-8">
-            <h1 className="text-7xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4 typing-animation">
+            <h1 className="text-7xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4 typing-animation ">
             Angelyn Domingo
             </h1>
-            <p className="text-2xl text-slate-400 mb-6 font-light" style={{ fontFamily: 'Monocraft, monospace' }}>
+            <p className="text-2xl text-slate-400 mb-6 font-light fade-in-float fade-in-delay-2" style={{ fontFamily: 'Monocraft, monospace' }}>
             💻 coder • 🎹 organist • 📚 learner
             </p>
             
-            <hr className="border-slate-400 border-t-2 mb-5" />
+            <hr className="border-slate-400 border-t-2 mb-5 fade-in-float fade-in-delay-3" />
             
             <div className="prose prose-invert prose-lg max-w-none">
-            <p className="text-slate-300 leading-relaxed mb-4">
+            <p className="text-slate-300 leading-relaxed mb-4 fade-in-float fade-in-delay-4">
                 I am a passionate developer and a first-generation college student.
             </p>
             
-            <p className="text-slate-300 leading-relaxed mb-4">
+            <p className="text-slate-300 leading-relaxed mb-4 fade-in-float fade-in-delay-5">
                 I am currently a senior majoring in computer science at George Mason University 
                 with an interest in web development, DevOps, software engineering, and human-computer 
                 interaction. I also enjoy learning about new languages and styles like 
                 functional programming that make development fun!
             </p>
             
-            <p className="text-slate-300 leading-relaxed">
+            <p className="text-slate-300 leading-relaxed fade-in-float fade-in-delay-6">
                 Besides computing, I also have a passion for music and enjoy playing the piano/organ 
                 for my church. When I am not coding or studying, I am usually playing games, 
                 reading, or spending time with my family and friends.
@@ -61,7 +54,7 @@ export default function Profile() {
             <div className="flex flex-wrap gap-4 mt-8 justify-center lg:justify-start">
             <a 
                 href="mailto:angelyn.domingo122@gmail.com"
-                className="border border-slate-600 rounded-lg hover:border-blue-500 transition-colors duration-300 font-medium flex items-center overflow-hidden"
+                className="border border-slate-600 rounded-lg hover:border-blue-500 transition-colors duration-300 font-medium flex items-center overflow-hidden fade-in-float fade-in-delay-6"
             >
                 <div className="px-4 py-3 bg-blue-600 text-white flex items-center gap-2">
                     <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -75,7 +68,7 @@ export default function Profile() {
             </a>
             <a 
                 href="https://github.com/AngelynDisguise"
-                className="border border-slate-600 rounded-lg hover:border-blue-500 transition-colors duration-300 font-medium flex items-center overflow-hidden"
+                className="border border-slate-600 rounded-lg hover:border-blue-500 transition-colors duration-300 font-medium flex items-center overflow-hidden fade-in-float fade-in-delay-7"
             >
                 <div className="px-4 py-3 bg-blue-600 text-white flex items-center gap-2">
                     <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -89,7 +82,7 @@ export default function Profile() {
             </a>
             <a 
                 href="https://linkedin.com/in/angelynd"
-                className="border border-slate-600 rounded-lg hover:border-blue-500 transition-colors duration-300 font-medium flex items-center overflow-hidden"
+                className="border border-slate-600 rounded-lg hover:border-blue-500 transition-colors duration-300 font-medium flex items-center overflow-hidden fade-in-float fade-in-delay-8"
             >
                 <div className="px-4 py-3 bg-blue-600 text-white flex items-center gap-2">
                     <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">

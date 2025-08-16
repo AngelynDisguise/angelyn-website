@@ -15,7 +15,7 @@ const navItems = [
     const pathname = usePathname()
 
     return (
-        <nav className="flex flex-wrap gap-2 mb-8 justify-center">
+        <nav className="flex flex-wrap gap-2 mb-8 justify-center fade-in-drop">
         {navItems.map((item) => (
             <Link
             key={item.name}

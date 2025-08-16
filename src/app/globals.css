@@ -53,3 +53,82 @@ body {
   font-family: var(--font-monocraft, 'Courier New', monospace);
   display: inline-block;
 }
+
+/* Fade-in animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInFloat {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDrop {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.fade-in-float {
+  opacity: 0;
+  animation: fadeInFloat 0.8s ease-out forwards;
+}
+
+.fade-in-drop {
+  opacity: 0;
+  animation: fadeInDrop 0.8s ease-out forwards;
+}
+
+.fade-in-delay-1 {
+  animation-delay: 0.1s;
+}
+
+.fade-in-delay-2 {
+  animation-delay: 0.2s;
+}
+
+.fade-in-delay-3 {
+  animation-delay: 0.3s;
+}
+
+.fade-in-delay-4 {
+  animation-delay: 0.4s;
+}
+
+.fade-in-delay-5 {
+  animation-delay: 0.5s;
+}
+
+.fade-in-delay-6 {
+  animation-delay: 0.6s;
+}
+
+.fade-in-delay-7 {
+  animation-delay: 0.7s;
+}
+
+.fade-in-delay-8 {
+  animation-delay: 0.8s;
+}
