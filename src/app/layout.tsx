@@ -1,4 +1,4 @@
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import "./globals.css"
 import { monocraft } from "@/lib/fontLoader"
 
@@ -6,6 +6,11 @@ import { monocraft } from "@/lib/fontLoader"
 export const metadata: Metadata = {
   title: "Angelyn Domingo",
   description: "Angelyn's personal portfolio website.",
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
 };
 
 export default function RootLayout({

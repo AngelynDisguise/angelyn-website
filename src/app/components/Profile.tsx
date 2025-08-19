@@ -1,9 +1,10 @@
 import Image from 'next/image'
 import profileImage from '../../../public/angelyn.jpg'
+import profileImageSquare from '../../../public/angelyn_square.png'
 
 export default function Profile() {
     return (
-        <div className="flex flex-col lg:flex-row gap-8 items-center justify-center p-12 lg:p-16">
+        <div className="flex flex-col lg:flex-row gap-6 items-center justify-center px-4 py-6 sm:p-8 lg:p-16">
         
         {/* Profile Image */}
         <div className="flex-shrink-0 fade-in fade-in-delay-5">
@@ -13,7 +14,15 @@ export default function Profile() {
                 alt="Profile"
                 width={320}
                 height={320}
-                className="rounded-2xl object-cover shadow-2xl border-4 border-slate-700"
+                className="hidden sm:block w-48 sm:w-80 rounded-2xl object-cover shadow-2xl border-4 border-slate-700 transition-all duration-700 ease-in-out"
+                priority
+            />
+            <Image
+                src={profileImageSquare}
+                alt="Profile"
+                width={192}
+                height={192}
+                className="block sm:hidden w-60 rounded-2xl object-cover shadow-2xl border-4 border-slate-700 transition-all duration-700 ease-in-out"
                 priority
             />
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-blue-900/20 to-transparent"></div>
@@ -21,11 +30,11 @@ export default function Profile() {
         </div>
 
         {/* Profile Info */}
-        <div className="flex-1 text-center lg:text-left p-6 lg:p-8">
-            <h1 className="text-7xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4 typing-animation ">
+        <div className="flex-1 text-center lg:text-left px-2 py-4 sm:p-6 lg:p-8 w-full overflow-hidden">
+            <h1 className="text-3xl sm:text-5xl lg:text-7xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4 typing-animation break-words">
             Angelyn Domingo
             </h1>
-            <p className="text-2xl text-slate-400 mb-6 font-light fade-in-float fade-in-delay-2" style={{ fontFamily: 'Monocraft, monospace' }}>
+            <p className="text-base sm:text-xl lg:text-2xl text-slate-400 mb-6 font-light fade-in-float fade-in-delay-2" style={{ fontFamily: 'Monocraft, monospace' }}>
             💻 coder • 🎹 organist • 📚 learner
             </p>
             
@@ -51,7 +60,7 @@ export default function Profile() {
             </div>
 
             {/* Contacts */}
-            <div className="flex flex-wrap gap-4 mt-8 justify-center lg:justify-start">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 mt-8 justify-center lg:justify-start">
             <a 
                 href="mailto:angelyn.domingo122@gmail.com"
                 className="border border-slate-600 rounded-lg hover:border-blue-500 transition-colors duration-300 font-medium flex items-center overflow-hidden fade-in-float fade-in-delay-6"
@@ -62,7 +71,7 @@ export default function Profile() {
                     </svg>
                     Contact Me
                 </div>
-                <div className="px-4 py-3 text-slate-300 hover:text-blue-400 transition-colors duration-300">
+                <div className="px-3 sm:px-4 py-3 text-slate-300 hover:text-blue-400 transition-colors duration-300 text-sm sm:text-base">
                     angelyn.domingo122@gmail.com
                 </div>
             </a>
@@ -76,7 +85,7 @@ export default function Profile() {
                     </svg>
                     GitHub
                 </div>
-                <div className="px-4 py-3 text-slate-300 hover:text-blue-400 transition-colors duration-300">
+                <div className="px-3 sm:px-4 py-3 text-slate-300 hover:text-blue-400 transition-colors duration-300 text-sm sm:text-base">
                     @AngelynDisguise
                 </div>
             </a>
@@ -90,7 +99,7 @@ export default function Profile() {
                     </svg>
                     LinkedIn
                 </div>
-                <div className="px-4 py-3 text-slate-300 hover:text-blue-400 transition-colors duration-300">
+                <div className="px-3 sm:px-4 py-3 text-slate-300 hover:text-blue-400 transition-colors duration-300 text-sm sm:text-base">
                     Angelyn Domingo
                 </div>
             </a>
