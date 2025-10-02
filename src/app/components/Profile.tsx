@@ -4,7 +4,7 @@ import profileImageSquare from '../../../public/angelyn_square.png'
 
 export default function Profile() {
     return (
-        <div className="flex flex-col lg:flex-row gap-6 items-center justify-center px-4 py-6 sm:p-8 lg:p-16">
+        <div className="flex flex-col lg:flex-row gap-4 sm:gap-6 items-center justify-center px-2 py-4 sm:px-4 sm:py-6 md:p-8 lg:p-16 max-w-full">
         
         {/* Profile Image */}
         <div className="flex-shrink-0 fade-in fade-in-delay-5">
@@ -30,8 +30,8 @@ export default function Profile() {
         </div>
 
         {/* Profile Info */}
-        <div className="flex-1 text-center lg:text-left px-2 py-4 sm:p-6 lg:p-8 w-full overflow-hidden">
-            <h1 className="text-3xl sm:text-5xl lg:text-7xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4 typing-animation break-words">
+        <div className="flex-1 text-center lg:text-left px-1 py-2 sm:px-2 sm:py-4 md:p-6 lg:p-8 w-full min-w-0 max-w-full">
+            <h1 className="text-base sm:text-2xl md:text-4xl lg:text-6xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-2 sm:mb-4 typing-animation break-words max-w-full">
             Angelyn Domingo
             </h1>
             <p className="text-base sm:text-xl lg:text-2xl text-slate-400 mb-6 font-light fade-in-float fade-in-delay-2" style={{ fontFamily: 'Monocraft, monospace' }}>
